@@ -26,7 +26,7 @@ import com.postmodern.postmoderndungeon.SPDSettings;
 import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
 import com.postmodern.postmoderndungeon.actors.hero.Hero;
 import com.postmodern.postmoderndungeon.sprites.ItemSpriteSheet;
-import com.postmodern.postmoderndungeon.windows.WndSupportPrompt;
+//import com.postmodern.postmoderndungeon.windows.WndSupportPrompt;
 import com.watabou.noosa.Game;
 import com.watabou.utils.Callback;
 
@@ -49,21 +49,21 @@ public class SkeletonKey extends Key {
 
 	@Override
 	public boolean doPickUp(Hero hero, int pos) {
-		if(!SPDSettings.supportNagged()){
-			try {
-				Dungeon.saveAll();
-				Game.runOnRenderThread(new Callback() {
-					@Override
-					public void call() {
-						ShatteredPixelDungeon.scene().add(new WndSupportPrompt());
-					}
-				});
-			} catch (IOException e) {
-				ShatteredPixelDungeon.reportException(e);
-			}
-			
-		}
-		
+//		if(!SPDSettings.supportNagged()){
+//			try {
+//				Dungeon.saveAll();
+//				Game.runOnRenderThread(new Callback() {
+//					@Override
+//					public void call() {
+//						ShatteredPixelDungeon.scene().add(new WndSupportPrompt());
+//					}
+//				});
+//			} catch (IOException e) {
+//				ShatteredPixelDungeon.reportException(e);
+//			}
+//
+//		}
+//
 		return super.doPickUp(hero, pos);
 	}
 

@@ -30,9 +30,6 @@ import com.postmodern.postmoderndungeon.effects.BannerSprites;
 import com.postmodern.postmoderndungeon.effects.Fireball;
 import com.postmodern.postmoderndungeon.messages.Languages;
 import com.postmodern.postmoderndungeon.messages.Messages;
-// import com.postmodern.postmoderndungeon.services.news.News;
-// import com.postmodern.postmoderndungeon.services.updates.AvailableUpdateData;
-// import com.postmodern.postmoderndungeon.services.updates.Updates;
 import com.postmodern.postmoderndungeon.sprites.CharSprite;
 import com.postmodern.postmoderndungeon.ui.Archs;
 import com.postmodern.postmoderndungeon.ui.Icons;
@@ -143,14 +140,6 @@ public class TitleScene extends PixelScene {
 		btnPlay.setRect(title.x, topRegion+GAP+30, title.width(), BTN_HEIGHT);
 		align(btnPlay);
 
-
-//		if (landscape()) {
-//			btnPlay.setRect(title.x-50, topRegion+GAP, ((title.width()+100)/2)-1, BTN_HEIGHT);
-//			align(btnPlay);
-//		} else {
-//			btnPlay.setRect(title.x, topRegion+GAP, title.width(), BTN_HEIGHT);
-//			align(btnPlay);
-//		}
 
 		BitmapText version = new BitmapText( "v" + Game.version, pixelFont);
 		version.measure();
