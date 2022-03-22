@@ -15,7 +15,7 @@ allprojects {
         appPackageName = 'com.postmodern.postmoderndungeon'
 
         appVersionCode = 588
-        appVersionName = '1.1.2'
+        appVersionName = '0.1'
 
         appJavaCompatibility = JavaVersion.VERSION_1_8
 
