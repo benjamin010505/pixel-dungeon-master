@@ -22,7 +22,7 @@
 package com.postmodern.postmoderndungeon.levels.painters;
 
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.journal.Document;
 import com.postmodern.postmoderndungeon.levels.Level;
 import com.postmodern.postmoderndungeon.levels.Patch;
@@ -157,7 +157,7 @@ public abstract class RegularPainter extends Painter {
 						doorSpots.add(p);
 				}
 				if (doorSpots.isEmpty()){
-					ShatteredPixelDungeon.reportException(
+					PostmodernDungeon.reportException(
 							new RuntimeException("Could not place a door! " +
 									"r=" + r.getClass().getSimpleName() +
 									" n=" + n.getClass().getSimpleName()));

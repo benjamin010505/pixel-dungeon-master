@@ -21,7 +21,7 @@
 
 package com.postmodern.postmoderndungeon.journal;
 
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.FileUtils;
 
@@ -69,7 +69,7 @@ public class Journal {
 			FileUtils.bundleToFile( JOURNAL_FILE, bundle );
 			saveNeeded = false;
 		} catch (IOException e) {
-			ShatteredPixelDungeon.reportException(e);
+			PostmodernDungeon.reportException(e);
 		}
 		
 	}

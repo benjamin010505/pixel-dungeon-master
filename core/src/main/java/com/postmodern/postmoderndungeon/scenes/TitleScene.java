@@ -24,29 +24,20 @@ package com.postmodern.postmoderndungeon.scenes;
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Chrome;
 import com.postmodern.postmoderndungeon.GamesInProgress;
-import com.postmodern.postmoderndungeon.SPDSettings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.effects.BannerSprites;
 import com.postmodern.postmoderndungeon.effects.Fireball;
-import com.postmodern.postmoderndungeon.messages.Languages;
 import com.postmodern.postmoderndungeon.messages.Messages;
-import com.postmodern.postmoderndungeon.sprites.CharSprite;
 import com.postmodern.postmoderndungeon.ui.Archs;
 import com.postmodern.postmoderndungeon.ui.Icons;
 import com.postmodern.postmoderndungeon.ui.StyledButton;
-import com.postmodern.postmoderndungeon.ui.Window;
-import com.postmodern.postmoderndungeon.windows.WndOptions;
-import com.postmodern.postmoderndungeon.windows.WndSettings;
 import com.watabou.glwrap.Blending;
 import com.watabou.noosa.BitmapText;
 import com.watabou.noosa.Camera;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.audio.Music;
-import com.watabou.utils.ColorMath;
 import com.watabou.utils.DeviceCompat;
-
-import java.util.Date;
 
 public class TitleScene extends PixelScene {
 	
@@ -109,9 +100,9 @@ public class TitleScene extends PixelScene {
 				if (GamesInProgress.checkAll().size() == 0){
 					GamesInProgress.selectedClass = null;
 					GamesInProgress.curSlot = 1;
-					ShatteredPixelDungeon.switchScene(HeroSelectScene.class);
+					PostmodernDungeon.switchScene(HeroSelectScene.class);
 				} else {
-					ShatteredPixelDungeon.switchNoFade( StartScene.class );
+					PostmodernDungeon.switchNoFade( StartScene.class );
 				}
 			}
 			
@@ -121,7 +112,7 @@ public class TitleScene extends PixelScene {
 				if (DeviceCompat.isDebug()) {
 					GamesInProgress.selectedClass = null;
 					GamesInProgress.curSlot = 1;
-					ShatteredPixelDungeon.switchScene(HeroSelectScene.class);
+					PostmodernDungeon.switchScene(HeroSelectScene.class);
 					return true;
 				}
 				return super.onLongClick();

@@ -27,7 +27,7 @@ import com.postmodern.postmoderndungeon.Challenges;
 import com.postmodern.postmoderndungeon.Dungeon;
 import com.postmodern.postmoderndungeon.Rankings;
 import com.postmodern.postmoderndungeon.SPDSettings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.Statistics;
 import com.postmodern.postmoderndungeon.actors.Actor;
 import com.postmodern.postmoderndungeon.actors.Char;
@@ -184,7 +184,7 @@ public class GameScene extends PixelScene {
 	public void create() {
 		
 		if (Dungeon.hero == null || Dungeon.level == null){
-			ShatteredPixelDungeon.switchNoFade(TitleScene.class);
+			PostmodernDungeon.switchNoFade(TitleScene.class);
 			return;
 		}
 
@@ -621,7 +621,7 @@ public class GameScene extends PixelScene {
 			try {
 				actorThread.wait(msToWait);
 			} catch (InterruptedException e) {
-				ShatteredPixelDungeon.reportException(e);
+				PostmodernDungeon.reportException(e);
 			}
 			return !Actor.processing();
 		}
@@ -634,7 +634,7 @@ public class GameScene extends PixelScene {
 			Badges.saveGlobal();
 			Journal.saveGlobal();
 		} catch (IOException e) {
-			ShatteredPixelDungeon.reportException(e);
+			PostmodernDungeon.reportException(e);
 		}
 	}
 

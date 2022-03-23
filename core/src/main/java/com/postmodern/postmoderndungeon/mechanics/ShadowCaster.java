@@ -22,7 +22,7 @@
 package com.postmodern.postmoderndungeon.mechanics;
 
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.utils.BArray;
 
 //based on: http://www.roguebasin.com/index.php?title=FOV_using_recursive_shadowcasting
@@ -68,7 +68,7 @@ public final class ShadowCaster {
 			scanOctant(distance, fieldOfView, blocking, 1, x, y, 0.0, 1.0, -1, -1, true);
 			scanOctant(distance, fieldOfView, blocking, 1, x, y, 0.0, 1.0, -1, -1, false);
 		} catch (Exception e){
-			ShatteredPixelDungeon.reportException(e);
+			PostmodernDungeon.reportException(e);
 			BArray.setFalse(fieldOfView);
 		}
 

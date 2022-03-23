@@ -27,7 +27,7 @@ import com.postmodern.postmoderndungeon.Chrome;
 import com.postmodern.postmoderndungeon.GamesInProgress;
 import com.postmodern.postmoderndungeon.Rankings;
 import com.postmodern.postmoderndungeon.SPDSettings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.effects.BannerSprites;
 import com.postmodern.postmoderndungeon.effects.Fireball;
 import com.postmodern.postmoderndungeon.journal.Document;
@@ -46,7 +46,7 @@ import com.watabou.utils.FileUtils;
 
 public class WelcomeScene extends PixelScene {
 
-	private static final int LATEST_UPDATE = ShatteredPixelDungeon.v1_1_0;
+	private static final int LATEST_UPDATE = PostmodernDungeon.v1_1_0;
 
 	@Override
 	public void create() {
@@ -54,8 +54,8 @@ public class WelcomeScene extends PixelScene {
 
 		final int previousVersion = SPDSettings.version();
 
-		if (ShatteredPixelDungeon.versionCode == previousVersion && !SPDSettings.intro()) {
-			ShatteredPixelDungeon.switchNoFade(TitleScene.class);
+		if (PostmodernDungeon.versionCode == previousVersion && !SPDSettings.intro()) {
+			PostmodernDungeon.switchNoFade(TitleScene.class);
 			return;
 		}
 
@@ -113,13 +113,13 @@ public class WelcomeScene extends PixelScene {
 			protected void onClick() {
 				super.onClick();
 				if (previousVersion == 0 || SPDSettings.intro()){
-					SPDSettings.version(ShatteredPixelDungeon.versionCode);
+					SPDSettings.version(PostmodernDungeon.versionCode);
 					GamesInProgress.selectedClass = null;
 					GamesInProgress.curSlot = 1;
-					ShatteredPixelDungeon.switchScene(HeroSelectScene.class);
+					PostmodernDungeon.switchScene(HeroSelectScene.class);
 				} else {
 					updateVersion(previousVersion);
-					ShatteredPixelDungeon.switchScene(TitleScene.class);
+					PostmodernDungeon.switchScene(TitleScene.class);
 				}
 			}
 		};
@@ -132,7 +132,7 @@ public class WelcomeScene extends PixelScene {
 				protected void onClick() {
 					super.onClick();
 					updateVersion(previousVersion);
-					ShatteredPixelDungeon.switchScene(ChangesScene.class);
+					PostmodernDungeon.switchScene(ChangesScene.class);
 				}
 			};
 			okay.setRect(title.x, buttonY, (title.width()/2)-2, 20);
@@ -152,7 +152,7 @@ public class WelcomeScene extends PixelScene {
 		String message;
 		if (previousVersion == 0 || SPDSettings.intro()) {
 			message = Messages.get(this, "welcome_msg");
-		} else if (previousVersion <= ShatteredPixelDungeon.versionCode) {
+		} else if (previousVersion <= PostmodernDungeon.versionCode) {
 			if (previousVersion < LATEST_UPDATE){
 				message = Messages.get(this, "update_intro");
 				message += "\n\n" + Messages.get(this, "update_msg");
@@ -194,20 +194,20 @@ public class WelcomeScene extends PixelScene {
 					} catch (Exception e) {
 						//if we encounter a fatal per-record error, then clear that record
 						Rankings.INSTANCE.records.remove(rec);
-						ShatteredPixelDungeon.reportException(e);
+						PostmodernDungeon.reportException(e);
 					}
 				}
 				Rankings.INSTANCE.save();
 			} catch (Exception e) {
 				//if we encounter a fatal error, then just clear the rankings
 				FileUtils.deleteFile( Rankings.RANKINGS_FILE );
-				ShatteredPixelDungeon.reportException(e);
+				PostmodernDungeon.reportException(e);
 			}
 
 		}
 
 		//if the player has beaten Goo, automatically give all guidebook pages
-		if (previousVersion <= ShatteredPixelDungeon.v0_9_3c){
+		if (previousVersion <= PostmodernDungeon.v0_9_3c){
 			Badges.loadGlobal();
 			if (Badges.isUnlocked(Badges.Badge.BOSS_SLAIN_1)){
 				for (String page : Document.ADVENTURERS_GUIDE.pageNames()){
@@ -216,7 +216,7 @@ public class WelcomeScene extends PixelScene {
 			}
 		}
 
-		SPDSettings.version(ShatteredPixelDungeon.versionCode);
+		SPDSettings.version(PostmodernDungeon.versionCode);
 	}
 	
 }

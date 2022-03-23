@@ -25,7 +25,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.utils.I18NBundle;
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.SPDSettings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -144,7 +144,7 @@ public class Messages {
 		try {
 			return String.format(Locale.ENGLISH, format, args);
 		} catch (IllegalFormatException e) {
-			ShatteredPixelDungeon.reportException( e );
+			PostmodernDungeon.reportException( e );
 			return format;
 		}
 	}

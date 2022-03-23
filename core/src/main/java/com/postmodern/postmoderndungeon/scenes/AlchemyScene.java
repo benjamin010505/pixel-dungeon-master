@@ -25,7 +25,7 @@ import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Badges;
 import com.postmodern.postmoderndungeon.Chrome;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.Statistics;
 import com.postmodern.postmoderndungeon.actors.hero.Belongings;
 import com.postmodern.postmoderndungeon.effects.Speck;
@@ -34,7 +34,6 @@ import com.postmodern.postmoderndungeon.items.Item;
 import com.postmodern.postmoderndungeon.items.LiquidMetal;
 import com.postmodern.postmoderndungeon.items.Recipe;
 import com.postmodern.postmoderndungeon.items.artifacts.AlchemistsToolkit;
-import com.postmodern.postmoderndungeon.items.weapon.missiles.darts.Dart;
 import com.postmodern.postmoderndungeon.journal.Journal;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.sprites.ItemSprite;
@@ -53,7 +52,6 @@ import com.postmodern.postmoderndungeon.windows.WndJournal;
 import com.watabou.gltextures.TextureCache;
 import com.watabou.glwrap.Blending;
 import com.watabou.noosa.Camera;
-import com.watabou.noosa.ColorBlock;
 import com.watabou.noosa.Game;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.NinePatch;
@@ -276,7 +274,7 @@ public class AlchemyScene extends PixelScene {
 			Badges.saveGlobal();
 			Journal.saveGlobal();
 		} catch (IOException e) {
-			ShatteredPixelDungeon.reportException(e);
+			PostmodernDungeon.reportException(e);
 		}
 	}
 	
@@ -440,7 +438,7 @@ public class AlchemyScene extends PixelScene {
 			try {
 				Dungeon.saveAll();
 			} catch (IOException e) {
-				ShatteredPixelDungeon.reportException(e);
+				PostmodernDungeon.reportException(e);
 			}
 			
 			synchronized (inputs) {
@@ -503,7 +501,7 @@ public class AlchemyScene extends PixelScene {
 			Badges.saveGlobal();
 			Journal.saveGlobal();
 		} catch (IOException e) {
-			ShatteredPixelDungeon.reportException(e);
+			PostmodernDungeon.reportException(e);
 		}
 		super.destroy();
 	}

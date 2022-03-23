@@ -37,7 +37,6 @@ import com.postmodern.postmoderndungeon.actors.mobs.npcs.Blacksmith;
 import com.postmodern.postmoderndungeon.actors.mobs.npcs.Ghost;
 import com.postmodern.postmoderndungeon.actors.mobs.npcs.Imp;
 import com.postmodern.postmoderndungeon.actors.mobs.npcs.Wandmaker;
-import com.postmodern.postmoderndungeon.items.Ankh;
 import com.postmodern.postmoderndungeon.items.Generator;
 import com.postmodern.postmoderndungeon.items.Heap;
 import com.postmodern.postmoderndungeon.items.Item;
@@ -53,7 +52,6 @@ import com.postmodern.postmoderndungeon.levels.CityLevel;
 import com.postmodern.postmoderndungeon.levels.DeadEndLevel;
 import com.postmodern.postmoderndungeon.levels.HallsLevel;
 import com.postmodern.postmoderndungeon.levels.LastLevel;
-import com.postmodern.postmoderndungeon.levels.LastShopLevel;
 import com.postmodern.postmoderndungeon.levels.Level;
 import com.postmodern.postmoderndungeon.levels.CavesBossLevel;
 import com.postmodern.postmoderndungeon.levels.CityBossLevel;
@@ -385,7 +383,7 @@ public class Dungeon {
 		try {
 			saveAll();
 		} catch (IOException e) {
-			ShatteredPixelDungeon.reportException(e);
+			PostmodernDungeon.reportException(e);
 			/*This only catches IO errors. Yes, this means things can go wrong, and they can go wrong catastrophically.
 			But when they do the user will get a nice 'report this issue' dialogue, and I can fix the bug.*/
 		}
@@ -521,7 +519,7 @@ public class Dungeon {
 			
 		} catch (IOException e) {
 			GamesInProgress.setUnknown( save );
-			ShatteredPixelDungeon.reportException(e);
+			PostmodernDungeon.reportException(e);
 		}
 	}
 	

@@ -23,7 +23,7 @@ package com.postmodern.postmoderndungeon.windows;
 
 import com.postmodern.postmoderndungeon.Challenges;
 import com.postmodern.postmoderndungeon.SPDSettings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.scenes.PixelScene;
 import com.postmodern.postmoderndungeon.ui.CheckBox;
@@ -82,7 +82,7 @@ public class WndChallenges extends Window {
 				@Override
 				protected void onClick() {
 					super.onClick();
-					ShatteredPixelDungeon.scene().add(
+					PostmodernDungeon.scene().add(
 							new WndMessage(Messages.get(Challenges.class, challenge+"_desc"))
 					);
 				}

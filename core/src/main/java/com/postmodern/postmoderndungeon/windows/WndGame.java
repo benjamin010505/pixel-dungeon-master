@@ -23,7 +23,7 @@ package com.postmodern.postmoderndungeon.windows;
 
 import com.postmodern.postmoderndungeon.Dungeon;
 import com.postmodern.postmoderndungeon.GamesInProgress;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.scenes.GameScene;
 import com.postmodern.postmoderndungeon.scenes.HeroSelectScene;
@@ -94,7 +94,7 @@ public class WndGame extends Window {
 					InterlevelScene.noStory = true;
 					GamesInProgress.selectedClass = Dungeon.hero.heroClass;
 					GamesInProgress.curSlot = GamesInProgress.firstEmpty();
-					ShatteredPixelDungeon.switchScene(HeroSelectScene.class);
+					PostmodernDungeon.switchScene(HeroSelectScene.class);
 				}
 			} );
 			curBtn.icon(Icons.get(Icons.ENTER));
@@ -117,7 +117,7 @@ public class WndGame extends Window {
 				try {
 					Dungeon.saveAll();
 				} catch (IOException e) {
-					ShatteredPixelDungeon.reportException(e);
+					PostmodernDungeon.reportException(e);
 				}
 				Game.switchScene(TitleScene.class);
 			}

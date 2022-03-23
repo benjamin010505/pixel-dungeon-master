@@ -32,7 +32,7 @@ import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.DeviceCompat;
 import com.watabou.utils.PlatformSupport;
 
-public class ShatteredPixelDungeon extends Game {
+public class PostmodernDungeon extends Game {
 
 	//variable constants for specific older versions of shattered, used for data conversion
 	//versions older than v0.9.0b are no longer supported, and data from them is ignored
@@ -44,7 +44,7 @@ public class ShatteredPixelDungeon extends Game {
 	public static final int v1_0_3   = 574;
 	public static final int v1_1_0   = 583;
 	
-	public ShatteredPixelDungeon(PlatformSupport platform ) {
+	public PostmodernDungeon(PlatformSupport platform ) {
 		super( sceneClass == null ? WelcomeScene.class : sceneClass, platform );
 	//	super( sceneClass == null ? WelcomeScene.class : sceneClass, platform );
 		//v1.1.0

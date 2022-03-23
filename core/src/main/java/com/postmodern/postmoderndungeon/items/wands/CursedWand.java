@@ -24,7 +24,7 @@ package com.postmodern.postmoderndungeon.items.wands;
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Challenges;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.Actor;
 import com.postmodern.postmoderndungeon.actors.Char;
 import com.postmodern.postmoderndungeon.actors.blobs.Blob;
@@ -38,7 +38,6 @@ import com.postmodern.postmoderndungeon.actors.buffs.Burning;
 import com.postmodern.postmoderndungeon.actors.buffs.Frost;
 import com.postmodern.postmoderndungeon.actors.buffs.Recharging;
 import com.postmodern.postmoderndungeon.actors.hero.Hero;
-import com.postmodern.postmoderndungeon.actors.hero.abilities.mage.WarpBeacon;
 import com.postmodern.postmoderndungeon.actors.mobs.GoldenMimic;
 import com.postmodern.postmoderndungeon.actors.mobs.Mimic;
 import com.postmodern.postmoderndungeon.actors.mobs.npcs.Sheep;
@@ -406,7 +405,7 @@ public class CursedWand {
 						return false;
 					}
 				} catch(IOException e){
-					ShatteredPixelDungeon.reportException(e);
+					PostmodernDungeon.reportException(e);
 					//maybe don't kill the game if the save failed.
 					return cursedEffect(origin, user, targetPos);
 				}

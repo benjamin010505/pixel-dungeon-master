@@ -24,7 +24,7 @@ package com.postmodern.postmoderndungeon.windows;
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Chrome;
 import com.postmodern.postmoderndungeon.SPDSettings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.messages.Languages;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.scenes.GameScene;
@@ -173,7 +173,7 @@ public class WndSettings extends WndTabbed {
 	public void hide() {
 		super.hide();
 		//resets generators because there's no need to retain chars for languages not selected
-		ShatteredPixelDungeon.seamlessResetScene(new Game.SceneChangeCallback() {
+		PostmodernDungeon.seamlessResetScene(new Game.SceneChangeCallback() {
 			@Override
 			public void beforeCreate() {
 				Game.platform.resetGenerators();
@@ -231,7 +231,7 @@ public class WndSettings extends WndTabbed {
 					protected void onChange() {
 						if (getSelectedValue() != SPDSettings.scale()) {
 							SPDSettings.scale(getSelectedValue());
-							ShatteredPixelDungeon.seamlessResetScene();
+							PostmodernDungeon.seamlessResetScene();
 						}
 					}
 				};
@@ -246,7 +246,7 @@ public class WndSettings extends WndTabbed {
 						super.onClick();
 						if (checked()) {
 							checked(!checked());
-							ShatteredPixelDungeon.scene().add(new WndOptions(Icons.get(Icons.DISPLAY),
+							PostmodernDungeon.scene().add(new WndOptions(Icons.get(Icons.DISPLAY),
 									Messages.get(DisplayTab.class, "saver"),
 									Messages.get(DisplayTab.class, "saver_desc"),
 									Messages.get(DisplayTab.class, "okay"),
@@ -450,7 +450,7 @@ public class WndSettings extends WndTabbed {
 				@Override
 				protected void onClick() {
 					super.onClick();
-					ShatteredPixelDungeon.seamlessResetScene(new Game.SceneChangeCallback() {
+					PostmodernDungeon.seamlessResetScene(new Game.SceneChangeCallback() {
 						@Override
 						public void beforeCreate() {
 							SPDSettings.systemFont(checked());
@@ -475,7 +475,7 @@ public class WndSettings extends WndTabbed {
 					@Override
 					protected void onClick() {
 						super.onClick();
-						ShatteredPixelDungeon.scene().addToFront(new WndKeyBindings());
+						PostmodernDungeon.scene().addToFront(new WndKeyBindings());
 					}
 				};
 
@@ -817,7 +817,7 @@ public class WndSettings extends WndTabbed {
 					protected void onClick() {
 						super.onClick();
 						Messages.setup(langs.get(langIndex));
-						ShatteredPixelDungeon.seamlessResetScene(new Game.SceneChangeCallback() {
+						PostmodernDungeon.seamlessResetScene(new Game.SceneChangeCallback() {
 							@Override
 							public void beforeCreate() {
 								SPDSettings.language(langs.get(langIndex));
@@ -929,7 +929,7 @@ public class WndSettings extends WndTabbed {
 						credits.add(text);
 
 						credits.resize(w, (int) text.bottom() + 2);
-						ShatteredPixelDungeon.scene().addToFront(credits);
+						PostmodernDungeon.scene().addToFront(credits);
 					}
 				};
 				add(btnCredits);

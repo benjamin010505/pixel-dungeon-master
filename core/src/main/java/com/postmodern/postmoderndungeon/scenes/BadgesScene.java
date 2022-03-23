@@ -23,7 +23,7 @@ package com.postmodern.postmoderndungeon.scenes;
 
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Badges;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.ui.Archs;
 import com.postmodern.postmoderndungeon.ui.BadgesGrid;
@@ -88,7 +88,7 @@ public class BadgesScene extends PixelScene {
 
 	@Override
 	protected void onBackPressed() {
-		ShatteredPixelDungeon.switchNoFade( TitleScene.class );
+		PostmodernDungeon.switchNoFade( TitleScene.class );
 	}
 
 }

@@ -103,14 +103,14 @@ public class GamesInProgress {
 				Dungeon.preview(info, bundle);
 				
 				//saves from before v0.9.0b are not supported
-				if (info.version < ShatteredPixelDungeon.v0_9_0b) {
+				if (info.version < PostmodernDungeon.v0_9_0b) {
 					info = null;
 				}
 
 			} catch (IOException e) {
 				info = null;
 			} catch (Exception e){
-				ShatteredPixelDungeon.reportException( e );
+				PostmodernDungeon.reportException( e );
 				info = null;
 			}
 			

@@ -24,7 +24,7 @@ package com.postmodern.postmoderndungeon.windows;
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Chrome;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.mobs.npcs.Wandmaker;
 import com.postmodern.postmoderndungeon.items.Item;
 import com.postmodern.postmoderndungeon.items.quest.CorpseDust;
@@ -137,7 +137,7 @@ public class WndWandmaker extends Window {
 				@Override
 				protected void onClick() {
 					if (Dungeon.hero.belongings.contains(questItem)) {
-						ShatteredPixelDungeon.scene().addToFront(new RewardWindow(item));
+						PostmodernDungeon.scene().addToFront(new RewardWindow(item));
 					} else {
 						hide();
 					}

@@ -21,7 +21,7 @@
 
 package com.postmodern.postmoderndungeon.ui.changelist;
 
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.items.Item;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.scenes.PixelScene;
@@ -53,7 +53,7 @@ public class ChangeButton extends Component {
 	}
 	
 	protected void onClick() {
-		ShatteredPixelDungeon.scene().add(new ChangesWindow(new Image(icon), title, message));
+		PostmodernDungeon.scene().add(new ChangesWindow(new Image(icon), title, message));
 	}
 	
 	@Override

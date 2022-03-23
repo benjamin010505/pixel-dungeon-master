@@ -26,13 +26,11 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3FileHandle;
-import com.badlogic.gdx.backends.lwjgl3.Lwjgl3NativesLoader;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Preferences;
 import com.badlogic.gdx.files.FileHandle;
-import com.badlogic.gdx.utils.GdxNativesLoader;
 import com.badlogic.gdx.utils.SharedLibraryLoader;
 import com.postmodern.postmoderndungeon.SPDSettings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 // import com.postmodern.postmoderndungeon.services.news.News;
 // import com.postmodern.postmoderndungeon.services.news.NewsImpl;
 // import com.postmodern.postmoderndungeon.services.updates.UpdateImpl;
@@ -168,6 +166,6 @@ public class DesktopLauncher {
 		config.setWindowIcon("icons/icon_16.png", "icons/icon_32.png", "icons/icon_48.png",
 				"icons/icon_64.png", "icons/icon_128.png", "icons/icon_256.png");
 
-		new Lwjgl3Application(new ShatteredPixelDungeon(new DesktopPlatformSupport()), config);
+		new Lwjgl3Application(new PostmodernDungeon(new DesktopPlatformSupport()), config);
 	}
 }

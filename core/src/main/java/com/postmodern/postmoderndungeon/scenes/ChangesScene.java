@@ -23,7 +23,7 @@ package com.postmodern.postmoderndungeon.scenes;
 
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Chrome;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.ui.Archs;
 import com.postmodern.postmoderndungeon.ui.ExitButton;
@@ -174,7 +174,7 @@ public class ChangesScene extends PixelScene {
 				super.onClick();
 				if (changesSelected != 0) {
 					changesSelected = 0;
-					ShatteredPixelDungeon.seamlessResetScene();
+					PostmodernDungeon.seamlessResetScene();
 				}
 			}
 		};
@@ -188,7 +188,7 @@ public class ChangesScene extends PixelScene {
 				super.onClick();
 				if (changesSelected != 1) {
 					changesSelected = 1;
-					ShatteredPixelDungeon.seamlessResetScene();
+					PostmodernDungeon.seamlessResetScene();
 				}
 			}
 		};
@@ -202,7 +202,7 @@ public class ChangesScene extends PixelScene {
 				super.onClick();
 				if (changesSelected != 2) {
 					changesSelected = 2;
-					ShatteredPixelDungeon.seamlessResetScene();
+					PostmodernDungeon.seamlessResetScene();
 				}
 			}
 		};
@@ -216,7 +216,7 @@ public class ChangesScene extends PixelScene {
 				super.onClick();
 				if (changesSelected != 3) {
 					changesSelected = 3;
-					ShatteredPixelDungeon.seamlessResetScene();
+					PostmodernDungeon.seamlessResetScene();
 				}
 			}
 		};
@@ -230,7 +230,7 @@ public class ChangesScene extends PixelScene {
 				super.onClick();
 				if (changesSelected != 4) {
 					changesSelected = 4;
-					ShatteredPixelDungeon.seamlessResetScene();
+					PostmodernDungeon.seamlessResetScene();
 				}
 			}
 		};
@@ -244,7 +244,7 @@ public class ChangesScene extends PixelScene {
 				super.onClick();
 				if (changesSelected != 5) {
 					changesSelected = 5;
-					ShatteredPixelDungeon.seamlessResetScene();
+					PostmodernDungeon.seamlessResetScene();
 				}
 			}
 		};
@@ -261,7 +261,7 @@ public class ChangesScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		ShatteredPixelDungeon.switchNoFade(TitleScene.class);
+		PostmodernDungeon.switchNoFade(TitleScene.class);
 	}
 
 }

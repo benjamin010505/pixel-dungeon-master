@@ -23,7 +23,7 @@ package com.postmodern.postmoderndungeon.levels.traps;
 
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.Actor;
 import com.postmodern.postmoderndungeon.actors.Char;
 import com.postmodern.postmoderndungeon.items.weapon.missiles.darts.Dart;
@@ -73,7 +73,7 @@ public class WornDartTrap extends Trap {
 					@Override
 					protected boolean act() {
 						final Actor toRemove = this;
-						((MissileSprite) ShatteredPixelDungeon.scene().recycle(MissileSprite.class)).
+						((MissileSprite) PostmodernDungeon.scene().recycle(MissileSprite.class)).
 							reset(pos, finalTarget.sprite, new Dart(), new Callback() {
 								@Override
 								public void call() {

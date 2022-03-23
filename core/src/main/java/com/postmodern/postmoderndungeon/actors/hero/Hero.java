@@ -26,11 +26,10 @@ import com.postmodern.postmoderndungeon.Badges;
 import com.postmodern.postmoderndungeon.Bones;
 import com.postmodern.postmoderndungeon.Dungeon;
 import com.postmodern.postmoderndungeon.GamesInProgress;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.Statistics;
 import com.postmodern.postmoderndungeon.actors.Actor;
 import com.postmodern.postmoderndungeon.actors.Char;
-import com.postmodern.postmoderndungeon.actors.blobs.Alchemy;
 import com.postmodern.postmoderndungeon.actors.buffs.AdrenalineSurge;
 import com.postmodern.postmoderndungeon.actors.buffs.Amok;
 import com.postmodern.postmoderndungeon.actors.buffs.AnkhInvulnerability;
@@ -147,7 +146,6 @@ import com.watabou.utils.Random;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 
 public class Hero extends Char {
@@ -835,7 +833,7 @@ public class Hero extends Char {
 			}
 
 			AlchemyScene.clearToolkit();
-			ShatteredPixelDungeon.switchScene(AlchemyScene.class);
+			PostmodernDungeon.switchScene(AlchemyScene.class);
 			return false;
 
 		} else if (getCloser( dst )) {

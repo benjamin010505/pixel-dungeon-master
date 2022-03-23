@@ -22,7 +22,7 @@
 package com.postmodern.postmoderndungeon.actors.buffs;
 
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.Char;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.scenes.GameScene;
@@ -53,7 +53,7 @@ public class Levitation extends FlavourBuff {
 		target.flying = false;
 		super.detach();
 		//only press tiles if we're current in the game screen
-		if (ShatteredPixelDungeon.scene() instanceof GameScene) {
+		if (PostmodernDungeon.scene() instanceof GameScene) {
 			Dungeon.level.occupyCell(target );
 		}
 	}

@@ -1,12 +1,10 @@
 package com.postmodern.postmoderndungeon.windows;
 
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.hero.Hero;
-import com.postmodern.postmoderndungeon.actors.mobs.npcs.Shopkeeper;
 import com.postmodern.postmoderndungeon.items.EnergyCrystal;
 import com.postmodern.postmoderndungeon.items.EquipableItem;
-import com.postmodern.postmoderndungeon.items.Gold;
 import com.postmodern.postmoderndungeon.items.Item;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.scenes.AlchemyScene;
@@ -96,10 +94,10 @@ public class WndEnergizeItem extends WndInfoItem {
 		}
 		item.detachAll( hero.belongings.backpack );
 
-		if (ShatteredPixelDungeon.scene() instanceof AlchemyScene){
+		if (PostmodernDungeon.scene() instanceof AlchemyScene){
 
 			Dungeon.energy += item.energyVal();
-			((AlchemyScene) ShatteredPixelDungeon.scene()).createEnergy();
+			((AlchemyScene) PostmodernDungeon.scene()).createEnergy();
 
 		} else {
 
@@ -121,10 +119,10 @@ public class WndEnergizeItem extends WndInfoItem {
 
 			item = item.detach( hero.belongings.backpack );
 
-			if (ShatteredPixelDungeon.scene() instanceof AlchemyScene){
+			if (PostmodernDungeon.scene() instanceof AlchemyScene){
 
 				Dungeon.energy += item.energyVal();
-				((AlchemyScene) ShatteredPixelDungeon.scene()).createEnergy();
+				((AlchemyScene) PostmodernDungeon.scene()).createEnergy();
 
 			} else {
 
@@ -137,11 +135,11 @@ public class WndEnergizeItem extends WndInfoItem {
 	}
 
 	public static WndBag openItemSelector(){
-		if (ShatteredPixelDungeon.scene() instanceof GameScene) {
+		if (PostmodernDungeon.scene() instanceof GameScene) {
 			return GameScene.selectItem( selector );
 		} else {
 			WndBag window = WndBag.getBag( selector );
-			ShatteredPixelDungeon.scene().addToFront(window);
+			PostmodernDungeon.scene().addToFront(window);
 			return window;
 		}
 	}
@@ -161,10 +159,10 @@ public class WndEnergizeItem extends WndInfoItem {
 		public void onSelect(Item item) {
 			if (item != null) {
 				WndBag parentWnd = openItemSelector();
-				if (ShatteredPixelDungeon.scene() instanceof GameScene) {
+				if (PostmodernDungeon.scene() instanceof GameScene) {
 					GameScene.show(new WndEnergizeItem(item, parentWnd));
 				} else {
-					ShatteredPixelDungeon.scene().addToFront(new WndEnergizeItem(item, parentWnd));
+					PostmodernDungeon.scene().addToFront(new WndEnergizeItem(item, parentWnd));
 				}
 			}
 		}

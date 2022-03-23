@@ -21,9 +21,8 @@
 
 package com.postmodern.postmoderndungeon.windows;
 
-import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.Statistics;
 import com.postmodern.postmoderndungeon.actors.buffs.Buff;
 import com.postmodern.postmoderndungeon.actors.hero.Hero;
@@ -41,11 +40,8 @@ import com.postmodern.postmoderndungeon.ui.StatusPane;
 import com.postmodern.postmoderndungeon.ui.TalentButton;
 import com.postmodern.postmoderndungeon.ui.TalentsPane;
 import com.postmodern.postmoderndungeon.ui.Window;
-import com.watabou.gltextures.SmartTexture;
-import com.watabou.gltextures.TextureCache;
 import com.watabou.noosa.Group;
 import com.watabou.noosa.Image;
-import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.ui.Component;
 
 import java.util.ArrayList;
@@ -136,7 +132,7 @@ public class WndHero extends WndTabbed {
 				@Override
 				protected void onClick() {
 					super.onClick();
-					ShatteredPixelDungeon.scene().addToFront(new WndHeroInfo(hero.heroClass));
+					PostmodernDungeon.scene().addToFront(new WndHeroInfo(hero.heroClass));
 				}
 			};
 			infoButton.setRect(title.right(), 0, 16, 16);

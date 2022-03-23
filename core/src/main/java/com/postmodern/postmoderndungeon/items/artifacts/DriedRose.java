@@ -23,7 +23,7 @@ package com.postmodern.postmoderndungeon.items.artifacts;
 
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.Actor;
 import com.postmodern.postmoderndungeon.actors.Char;
 import com.postmodern.postmoderndungeon.actors.blobs.CorrosiveGas;
@@ -257,7 +257,7 @@ public class DriedRose extends Artifact {
 					ghostID = 0;
 				}
 			} catch ( ClassCastException e ){
-				ShatteredPixelDungeon.reportException(e);
+				PostmodernDungeon.reportException(e);
 				ghostID = 0;
 			}
 		}
@@ -764,7 +764,7 @@ public class DriedRose extends Artifact {
 					yell( Messages.get( this, "dialogue_halls_" + variant ));
 					break;
 			}
-			if (ShatteredPixelDungeon.scene() instanceof GameScene) {
+			if (PostmodernDungeon.scene() instanceof GameScene) {
 				Sample.INSTANCE.play( Assets.Sounds.GHOST );
 			}
 		}

@@ -22,7 +22,7 @@
 package com.postmodern.postmoderndungeon.ui;
 
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.items.ArcaneResin;
 import com.postmodern.postmoderndungeon.items.Generator;
 import com.postmodern.postmoderndungeon.items.Item;
@@ -58,7 +58,6 @@ import com.postmodern.postmoderndungeon.items.spells.BeaconOfReturning;
 import com.postmodern.postmoderndungeon.items.spells.CurseInfusion;
 import com.postmodern.postmoderndungeon.items.spells.FeatherFall;
 import com.postmodern.postmoderndungeon.items.spells.MagicalInfusion;
-import com.postmodern.postmoderndungeon.items.spells.MagicalPorter;
 import com.postmodern.postmoderndungeon.items.spells.PhaseShift;
 import com.postmodern.postmoderndungeon.items.spells.ReclaimTrap;
 import com.postmodern.postmoderndungeon.items.spells.Recycle;
@@ -113,7 +112,7 @@ public class QuickRecipe extends Component {
 
 				@Override
 				protected void onClick() {
-					ShatteredPixelDungeon.scene().addToFront(new WndInfoItem(in));
+					PostmodernDungeon.scene().addToFront(new WndInfoItem(in));
 				}
 			};
 			
@@ -141,7 +140,7 @@ public class QuickRecipe extends Component {
 		}
 		if (hasInputs) {
 			arrow.icon.tint(1, 1, 0, 1);
-			if (!(ShatteredPixelDungeon.scene() instanceof AlchemyScene)) {
+			if (!(PostmodernDungeon.scene() instanceof AlchemyScene)) {
 				arrow.enable(false);
 			}
 		} else {
@@ -154,7 +153,7 @@ public class QuickRecipe extends Component {
 		this.output = new ItemSlot(output){
 			@Override
 			protected void onClick() {
-				ShatteredPixelDungeon.scene().addToFront(new WndInfoItem(output));
+				PostmodernDungeon.scene().addToFront(new WndInfoItem(output));
 			}
 		};
 		if (!hasInputs){
@@ -249,7 +248,7 @@ public class QuickRecipe extends Component {
 				}
 			}
 			
-			((AlchemyScene)ShatteredPixelDungeon.scene()).populate(ingredients, Dungeon.hero.belongings);
+			((AlchemyScene) PostmodernDungeon.scene()).populate(ingredients, Dungeon.hero.belongings);
 		}
 		
 		public void hardlightText(int color ){

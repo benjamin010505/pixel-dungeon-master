@@ -21,7 +21,7 @@
 
 package com.postmodern.postmoderndungeon.levels.rooms.standard;
 
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.mobs.Mob;
 import com.postmodern.postmoderndungeon.actors.mobs.npcs.Imp;
 import com.postmodern.postmoderndungeon.actors.mobs.npcs.ImpShopkeeper;
@@ -86,7 +86,7 @@ public class ImpShopRoom extends ShopRoom {
 
 		Mob shopkeeper = new ImpShopkeeper();
 		shopkeeper.pos = pos;
-		if (ShatteredPixelDungeon.scene() instanceof GameScene) {
+		if (PostmodernDungeon.scene() instanceof GameScene) {
 			GameScene.add(shopkeeper);
 		} else {
 			level.mobs.add(shopkeeper);

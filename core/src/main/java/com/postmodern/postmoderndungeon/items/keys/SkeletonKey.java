@@ -21,16 +21,10 @@
 
 package com.postmodern.postmoderndungeon.items.keys;
 
-import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.SPDSettings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
 import com.postmodern.postmoderndungeon.actors.hero.Hero;
 import com.postmodern.postmoderndungeon.sprites.ItemSpriteSheet;
 //import com.postmodern.postmoderndungeon.windows.WndSupportPrompt;
-import com.watabou.noosa.Game;
-import com.watabou.utils.Callback;
 
-import java.io.IOException;
 
 public class SkeletonKey extends Key {
 	

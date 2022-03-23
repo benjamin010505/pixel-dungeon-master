@@ -35,7 +35,6 @@ import com.postmodern.postmoderndungeon.items.scrolls.Scroll;
 import com.postmodern.postmoderndungeon.journal.Notes;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.ui.QuickSlotButton;
-import com.watabou.noosa.Game;
 import com.watabou.utils.Bundlable;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.FileUtils;
@@ -209,7 +208,7 @@ public enum Rankings {
 		try {
 			FileUtils.bundleToFile( RANKINGS_FILE, bundle);
 		} catch (IOException e) {
-			ShatteredPixelDungeon.reportException(e);
+			PostmodernDungeon.reportException(e);
 		}
 
 	}

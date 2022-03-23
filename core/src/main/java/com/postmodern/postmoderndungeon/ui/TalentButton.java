@@ -23,26 +23,20 @@ package com.postmodern.postmoderndungeon.ui;
 
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.hero.Talent;
 import com.postmodern.postmoderndungeon.effects.Speck;
-import com.postmodern.postmoderndungeon.items.Item;
-import com.postmodern.postmoderndungeon.items.scrolls.InventoryScroll;
 import com.postmodern.postmoderndungeon.items.scrolls.exotic.ScrollOfMetamorphosis;
 import com.postmodern.postmoderndungeon.messages.Messages;
 import com.postmodern.postmoderndungeon.scenes.GameScene;
 import com.postmodern.postmoderndungeon.scenes.PixelScene;
 import com.postmodern.postmoderndungeon.windows.WndInfoTalent;
-import com.watabou.gltextures.SmartTexture;
-import com.watabou.gltextures.TextureCache;
 import com.watabou.noosa.ColorBlock;
 import com.watabou.noosa.Image;
 import com.watabou.noosa.PointerArea;
-import com.watabou.noosa.TextureFilm;
 import com.watabou.noosa.audio.Sample;
 import com.watabou.noosa.particles.Emitter;
 import com.watabou.noosa.ui.Button;
-import com.watabou.utils.Callback;
 
 import java.util.LinkedHashMap;
 
@@ -122,7 +116,7 @@ public class TalentButton extends Button {
 				&& Dungeon.hero.isAlive()
 				&& Dungeon.hero.talentPointsAvailable(tier) > 0
 				&& Dungeon.hero.pointsInTalent(talent) < talent.maxPoints()){
-			ShatteredPixelDungeon.scene().addToFront(new WndInfoTalent(talent, pointsInTalent, new WndInfoTalent.TalentButtonCallback() {
+			PostmodernDungeon.scene().addToFront(new WndInfoTalent(talent, pointsInTalent, new WndInfoTalent.TalentButtonCallback() {
 
 				@Override
 				public String prompt() {
@@ -135,7 +129,7 @@ public class TalentButton extends Button {
 				}
 			}));
 		} else if (mode == Mode.METAMORPH_CHOOSE && Dungeon.hero != null && Dungeon.hero.isAlive()) {
-			ShatteredPixelDungeon.scene().addToFront(new WndInfoTalent(talent, pointsInTalent, new WndInfoTalent.TalentButtonCallback() {
+			PostmodernDungeon.scene().addToFront(new WndInfoTalent(talent, pointsInTalent, new WndInfoTalent.TalentButtonCallback() {
 
 				@Override
 				public String prompt() {
@@ -151,7 +145,7 @@ public class TalentButton extends Button {
 				}
 			}));
 		} else if (mode == Mode.METAMORPH_REPLACE && Dungeon.hero != null && Dungeon.hero.isAlive()) {
-			ShatteredPixelDungeon.scene().addToFront(new WndInfoTalent(talent, pointsInTalent, new WndInfoTalent.TalentButtonCallback() {
+			PostmodernDungeon.scene().addToFront(new WndInfoTalent(talent, pointsInTalent, new WndInfoTalent.TalentButtonCallback() {
 
 				@Override
 				public String prompt() {
@@ -206,7 +200,7 @@ public class TalentButton extends Button {
 				}
 			}));
 		} else {
-			ShatteredPixelDungeon.scene().addToFront(new WndInfoTalent(talent, pointsInTalent, null));
+			PostmodernDungeon.scene().addToFront(new WndInfoTalent(talent, pointsInTalent, null));
 		}
 	}
 

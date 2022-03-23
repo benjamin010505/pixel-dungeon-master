@@ -22,10 +22,9 @@
 package com.postmodern.postmoderndungeon.scenes;
 
 import com.postmodern.postmoderndungeon.Assets;
-import com.postmodern.postmoderndungeon.Chrome;
 import com.postmodern.postmoderndungeon.Dungeon;
 import com.postmodern.postmoderndungeon.GamesInProgress;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.Statistics;
 import com.postmodern.postmoderndungeon.actors.Actor;
 import com.postmodern.postmoderndungeon.actors.buffs.Buff;
@@ -39,10 +38,7 @@ import com.postmodern.postmoderndungeon.levels.rooms.special.SpecialRoom;
 import com.postmodern.postmoderndungeon.messages.Messages;
 // import com.postmodern.postmoderndungeon.services.updates.Updates;
 import com.postmodern.postmoderndungeon.ui.GameLog;
-import com.postmodern.postmoderndungeon.ui.Icons;
 import com.postmodern.postmoderndungeon.ui.RenderedTextBlock;
-import com.postmodern.postmoderndungeon.ui.StyledButton;
-import com.postmodern.postmoderndungeon.ui.Window;
 import com.postmodern.postmoderndungeon.utils.BArray;
 import com.postmodern.postmoderndungeon.windows.WndError;
 import com.postmodern.postmoderndungeon.windows.WndStory;
@@ -54,7 +50,6 @@ import com.watabou.noosa.Image;
 import com.watabou.noosa.NoosaScript;
 import com.watabou.noosa.NoosaScriptNoLighting;
 import com.watabou.noosa.SkinnedBlock;
-import com.watabou.utils.DeviceCompat;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -356,7 +351,7 @@ public class InterlevelScene extends PixelScene {
 					s += "\n";
 					s += t.toString();
 				}
-				ShatteredPixelDungeon.reportException(
+				PostmodernDungeon.reportException(
 						new RuntimeException("waited more than 10 seconds on levelgen. " +
 								"Seed:" + Dungeon.seed + " depth:" + Dungeon.depth + " trace:" +
 								s)

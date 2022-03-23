@@ -21,7 +21,7 @@
 
 package com.postmodern.postmoderndungeon.ui;
 
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.scenes.TitleScene;
 import com.watabou.noosa.Game;
 
@@ -39,7 +39,7 @@ public class ExitButton extends IconButton {
 		if (Game.scene() instanceof TitleScene) {
 			Game.instance.finish();
 		} else {
-			ShatteredPixelDungeon.switchNoFade( TitleScene.class );
+			PostmodernDungeon.switchNoFade( TitleScene.class );
 		}
 	}
 }

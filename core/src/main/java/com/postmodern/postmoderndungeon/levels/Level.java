@@ -24,7 +24,7 @@ package com.postmodern.postmoderndungeon.levels;
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Challenges;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.Statistics;
 import com.postmodern.postmoderndungeon.actors.Actor;
 import com.postmodern.postmoderndungeon.actors.Char;
@@ -312,7 +312,7 @@ public abstract class Level implements Bundlable {
 		version = bundle.getInt( VERSION );
 		
 		//saves from before v0.9.0b are not supported
-		if (version < ShatteredPixelDungeon.v0_9_0b){
+		if (version < PostmodernDungeon.v0_9_0b){
 			throw new RuntimeException("old save");
 		}
 
@@ -812,7 +812,7 @@ public abstract class Level implements Bundlable {
 			heap.drop(item);
 		}
 		
-		if (Dungeon.level != null && ShatteredPixelDungeon.scene() instanceof GameScene) {
+		if (Dungeon.level != null && PostmodernDungeon.scene() instanceof GameScene) {
 			pressCell( cell );
 		}
 		

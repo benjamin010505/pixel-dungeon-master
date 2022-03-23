@@ -21,13 +21,10 @@
 
 package com.postmodern.postmoderndungeon.levels.features;
 
-import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.Actor;
 import com.postmodern.postmoderndungeon.actors.Char;
-import com.postmodern.postmoderndungeon.actors.buffs.Buff;
-import com.postmodern.postmoderndungeon.actors.buffs.Invisibility;
 import com.postmodern.postmoderndungeon.actors.hero.Hero;
 import com.postmodern.postmoderndungeon.actors.hero.HeroClass;
 import com.postmodern.postmoderndungeon.actors.hero.Talent;
@@ -43,7 +40,6 @@ import com.postmodern.postmoderndungeon.items.food.Berry;
 import com.postmodern.postmoderndungeon.levels.Level;
 import com.postmodern.postmoderndungeon.levels.Terrain;
 import com.postmodern.postmoderndungeon.scenes.GameScene;
-import com.watabou.noosa.audio.Sample;
 import com.watabou.utils.Random;
 
 public class HighGrass {
@@ -145,7 +141,7 @@ public class HighGrass {
 		
 		freezeTrample = false;
 		
-		if (ShatteredPixelDungeon.scene() instanceof GameScene) {
+		if (PostmodernDungeon.scene() instanceof GameScene) {
 			GameScene.updateMap(pos);
 			
 			CellEmitter.get(pos).burst(LeafParticle.LEVEL_SPECIFIC, 4);

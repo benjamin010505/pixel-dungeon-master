@@ -24,7 +24,7 @@ package com.postmodern.postmoderndungeon.items;
 import com.postmodern.postmoderndungeon.Badges;
 import com.postmodern.postmoderndungeon.Challenges;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.Statistics;
 import com.postmodern.postmoderndungeon.actors.Actor;
 import com.postmodern.postmoderndungeon.actors.hero.Hero;
@@ -105,7 +105,7 @@ public class Amulet extends Item {
 				}
 			});
 		} catch (IOException e) {
-			ShatteredPixelDungeon.reportException(e);
+			PostmodernDungeon.reportException(e);
 		}
 	}
 	

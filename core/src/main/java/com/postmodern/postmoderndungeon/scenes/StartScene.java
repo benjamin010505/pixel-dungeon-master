@@ -24,7 +24,7 @@ package com.postmodern.postmoderndungeon.scenes;
 import com.postmodern.postmoderndungeon.Badges;
 import com.postmodern.postmoderndungeon.Chrome;
 import com.postmodern.postmoderndungeon.GamesInProgress;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.hero.HeroSubClass;
 import com.postmodern.postmoderndungeon.journal.Journal;
 import com.postmodern.postmoderndungeon.messages.Messages;
@@ -112,7 +112,7 @@ public class StartScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		ShatteredPixelDungeon.switchNoFade( TitleScene.class );
+		PostmodernDungeon.switchNoFade( TitleScene.class );
 	}
 	
 	private static class SaveSlotButton extends Button {
@@ -259,9 +259,9 @@ public class StartScene extends PixelScene {
 			if (newGame) {
 				GamesInProgress.selectedClass = null;
 				GamesInProgress.curSlot = slot;
-				ShatteredPixelDungeon.switchScene(HeroSelectScene.class);
+				PostmodernDungeon.switchScene(HeroSelectScene.class);
 			} else {
-				ShatteredPixelDungeon.scene().add( new WndGameInProgress(slot));
+				PostmodernDungeon.scene().add( new WndGameInProgress(slot));
 			}
 		}
 	}

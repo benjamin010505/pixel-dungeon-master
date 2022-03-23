@@ -23,7 +23,7 @@ package com.postmodern.postmoderndungeon.scenes;
 
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Rankings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.hero.HeroClass;
 import com.postmodern.postmoderndungeon.effects.Flare;
 import com.postmodern.postmoderndungeon.messages.Messages;
@@ -144,7 +144,7 @@ public class RankingsScene extends PixelScene {
 	
 	@Override
 	protected void onBackPressed() {
-		ShatteredPixelDungeon.switchNoFade(TitleScene.class);
+		PostmodernDungeon.switchNoFade(TitleScene.class);
 	}
 	
 	public static class Record extends Button {

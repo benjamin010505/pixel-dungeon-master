@@ -22,7 +22,7 @@
 package com.postmodern.postmoderndungeon.levels.rooms.special;
 
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.levels.rooms.Room;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
@@ -190,7 +190,7 @@ public abstract class SpecialRoom extends Room {
 			}
 		} else {
 			initForRun();
-			ShatteredPixelDungeon.reportException(new Exception("specials array didn't exist!"));
+			PostmodernDungeon.reportException(new Exception("specials array didn't exist!"));
 		}
 		pitNeededDepth = bundle.getInt(PIT);
 	}

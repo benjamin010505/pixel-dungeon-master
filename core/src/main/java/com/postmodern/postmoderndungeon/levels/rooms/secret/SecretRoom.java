@@ -21,7 +21,7 @@
 
 package com.postmodern.postmoderndungeon.levels.rooms.secret;
 
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.levels.rooms.special.SpecialRoom;
 import com.watabou.utils.Bundle;
 import com.watabou.utils.Random;
@@ -115,7 +115,7 @@ public abstract class SecretRoom extends SpecialRoom {
 			regionSecretsThisRun = bundle.getIntArray(REGIONS);
 		} else {
 			initForRun();
-			ShatteredPixelDungeon.reportException(new Exception("secrets array didn't exist!"));
+			PostmodernDungeon.reportException(new Exception("secrets array didn't exist!"));
 		}
 	}
 	

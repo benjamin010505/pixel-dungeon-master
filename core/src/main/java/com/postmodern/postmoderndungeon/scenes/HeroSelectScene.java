@@ -27,7 +27,7 @@ import com.postmodern.postmoderndungeon.Dungeon;
 import com.postmodern.postmoderndungeon.GamesInProgress;
 import com.postmodern.postmoderndungeon.Rankings;
 import com.postmodern.postmoderndungeon.SPDSettings;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.hero.HeroClass;
 import com.postmodern.postmoderndungeon.journal.Journal;
 import com.postmodern.postmoderndungeon.messages.Messages;
@@ -140,7 +140,7 @@ public class HeroSelectScene extends PixelScene {
 			@Override
 			protected void onClick() {
 				super.onClick();
-				ShatteredPixelDungeon.scene().addToFront(new WndHeroInfo(GamesInProgress.selectedClass));
+				PostmodernDungeon.scene().addToFront(new WndHeroInfo(GamesInProgress.selectedClass));
 			}
 		};
 		infoButton.visible = false;
@@ -169,7 +169,7 @@ public class HeroSelectScene extends PixelScene {
 				Icons.get( SPDSettings.challenges() > 0 ? Icons.CHALLENGE_ON :Icons.CHALLENGE_OFF)){
 			@Override
 			protected void onClick() {
-				ShatteredPixelDungeon.scene().addToFront(new WndChallenges(SPDSettings.challenges(), true) {
+				PostmodernDungeon.scene().addToFront(new WndChallenges(SPDSettings.challenges(), true) {
 					public void onBackPressed() {
 						super.onBackPressed();
 						icon(Icons.get(SPDSettings.challenges() > 0 ? Icons.CHALLENGE_ON : Icons.CHALLENGE_OFF));
@@ -273,7 +273,7 @@ public class HeroSelectScene extends PixelScene {
 	@Override
 	protected void onBackPressed() {
 		if (btnExit.visible){
-			ShatteredPixelDungeon.switchScene(TitleScene.class);
+			PostmodernDungeon.switchScene(TitleScene.class);
 		} else {
 			super.onBackPressed();
 		}
@@ -314,9 +314,9 @@ public class HeroSelectScene extends PixelScene {
 			super.onClick();
 
 			if( !cl.isUnlocked() ){
-				ShatteredPixelDungeon.scene().addToFront( new WndMessage(cl.unlockMsg()));
+				PostmodernDungeon.scene().addToFront( new WndMessage(cl.unlockMsg()));
 			} else if (GamesInProgress.selectedClass == cl) {
-				ShatteredPixelDungeon.scene().add(new WndHeroInfo(cl));
+				PostmodernDungeon.scene().add(new WndHeroInfo(cl));
 			} else {
 				setSelectedHero(cl);
 			}

@@ -21,8 +21,7 @@
 
 package com.postmodern.postmoderndungeon.items;
 
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
-import com.postmodern.postmoderndungeon.items.artifacts.AlchemistsToolkit;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.items.bombs.Bomb;
 import com.postmodern.postmoderndungeon.items.food.Blandfruit;
 import com.postmodern.postmoderndungeon.items.food.MeatPie;
@@ -57,7 +56,6 @@ import com.postmodern.postmoderndungeon.items.spells.Recycle;
 import com.postmodern.postmoderndungeon.items.spells.SummonElemental;
 import com.postmodern.postmoderndungeon.items.spells.TelekineticGrab;
 import com.postmodern.postmoderndungeon.items.spells.WildEnergy;
-import com.postmodern.postmoderndungeon.items.wands.Wand;
 import com.postmodern.postmoderndungeon.items.weapon.missiles.MissileWeapon;
 import com.watabou.utils.Reflection;
 
@@ -156,7 +154,7 @@ public abstract class Recipe {
 				result.quantity(outQuantity);
 				return result;
 			} catch (Exception e) {
-				ShatteredPixelDungeon.reportException( e );
+				PostmodernDungeon.reportException( e );
 				return null;
 			}
 		}

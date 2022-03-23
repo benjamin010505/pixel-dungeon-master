@@ -24,7 +24,7 @@ package com.postmodern.postmoderndungeon.windows;
 import com.postmodern.postmoderndungeon.Assets;
 import com.postmodern.postmoderndungeon.Chrome;
 import com.postmodern.postmoderndungeon.Dungeon;
-import com.postmodern.postmoderndungeon.ShatteredPixelDungeon;
+import com.postmodern.postmoderndungeon.PostmodernDungeon;
 import com.postmodern.postmoderndungeon.actors.mobs.npcs.Ghost;
 import com.postmodern.postmoderndungeon.items.Item;
 import com.postmodern.postmoderndungeon.items.armor.Armor;
@@ -143,7 +143,7 @@ public class WndSadGhost extends Window {
 				}
 				@Override
 				protected void onClick() {
-					ShatteredPixelDungeon.scene().addToFront(new RewardWindow(item));
+					PostmodernDungeon.scene().addToFront(new RewardWindow(item));
 				}
 			};
 			add(slot);
